@@ -1,0 +1,219 @@
+#============= batterysecret ==============
+type batterysecret, domain;
+allow batterysecret kmsg_device:chr_file getattr;
+dontaudit batterysecret self:capability dac_override;
+
+#============= charge_logger ==============
+type charge_logger, domain;
+allow charge_logger kmsg_device:chr_file getattr;
+dontaudit charge_logger self:capability dac_override;
+allow charge_logger self:capability fowner;
+##dontaudit charge_logger self:capability dac_override;
+
+#============= cameraserver ==============
+
+dontaudit cameraserver vendor_default_prop:file read; 
+##get_prop(cameraserver, vendor_default_prop); neverallow
+
+#============= eu_mode ==============
+type eu_mode, domain;
+dontaudit eu_mode default_prop:file read;
+##allow eu_mode default_prop:file open;neverallow
+
+#============= fsck ==============
+allow fsck sysfs_memory:dir search;
+allow fsck sysfs_memory:file getattr;
+allow fsck sysfs_memory:file read;
+allow fsck sysfs_memory:file open;
+#============= hal_audio_default  vendor==============
+type hal_audio_default, domain;
+type sysfs_audio_name, fs_type;
+##type bluetooth_prop, property_type;
+##allow hal_audio_default bluetooth_prop:file read;
+##get_prop(hal_audio_default, bluetooth_prop);neverallow
+##allow hal_audio_default default_prop:file read;
+dontaudit hal_audio_default default_prop:file read;
+##get_prop(hal_audio_default, default_prop);neverallow
+
+allow hal_audio_default sysfs:dir read;
+allow hal_audio_default sysfs_audio_name:file getattr;
+allow hal_audio_default sysfs_audio_name:file read;
+allow hal_audio_default sysfs:dir open;
+allow hal_audio_default sysfs_audio_name:file open;
+
+##allow hal_audio_default systemsound_config_prop:file read;
+##get_prop(hal_audio_default, systemsound_config_prop);neverallow
+##allow hal_audio_default vendor_pd_locater_dbg_prop:file read;
+get_prop(hal_audio_default, vendor_pd_locater_dbg_prop); 
+
+#============= hal_bluetooth_default ==============
+type hal_bluetooth_default, domain;
+type vendor_ramdump_vendor_data_file, file_type;
+allow hal_bluetooth_default vendor_ramdump_vendor_data_file:dir read;
+allow hal_bluetooth_default vendor_ramdump_vendor_data_file:dir open;
+
+#============= hal_camera_default ==============
+type hal_camera_default,  domain;
+type vendor_sysfs_qvga_file,  fs_type;
+allow hal_camera_default mnt_vendor_file:dir search;
+allow hal_camera_default mnt_vendor_file:dir open;
+allow hal_camera_default mnt_vendor_file:dir read;
+allow hal_camera_default vendor_sysfs_qvga_file:file getattr;
+
+#============= hal_fingerprint_default ==============
+type hal_fingerprint_default,  domain;
+allow hal_fingerprint_default vendor_data_file:file create;
+
+#============= hal_health_default ==============
+type hal_health_default,  domain;
+allow hal_health_default sysfs:file open;
+allow hal_health_default sysfs:file read;
+allow hal_health_default sysfs:file getattr;
+
+#============= hal_mtdservice_default ==============
+type hal_mtdservice_default,  domain;
+##allow hal_mtdservice_default default_prop:file read; neverallow
+allow hal_mtdservice_default servicemanager:binder call;
+allow hal_mtdservice_default servicemanager:binder transfer;
+allow hal_mtdservice_default hal_system_suspend_service:service_manager find;
+allow hal_mtdservice_default system_suspend:binder call;
+##allow hal_mtdservice_default device:chr_file write;neverallow
+
+#============= system_suspend ==============
+allow system_suspend hal_mtdservice_default:binder transfer;
+
+#============= init ==============
+allow init debugfs_tracing_debug:dir mounton;
+allow init sysfs_memory:file open;
+allow init sysfs_memory:file write;
+
+#============= isolated_app ==============
+dontaudit isolated_app content_capture_service:service_manager find;
+
+#============= mediaprovider_app ==============
+allow mediaprovider_app radio_service:service_manager find;
+
+#============= mi_ric ==============
+type mi_ric, domain;
+type minidump_data_file, file_type, data_file_type;
+allow mi_ric minidump_data_file:dir search;
+allow mi_ric minidump_data_file:file getattr;
+allow mi_ric minidump_data_file:file read;
+allow mi_ric minidump_data_file:file open;
+
+#============= mi_thermald ==============
+##type mi_thermald, domain;
+##allow mi_thermald vendor_default_prop:property_service set;
+##set_prop(mi_thermald, vendor_default_prop);neverallow
+
+#============= platform_app ==============
+type vendor_sysfs_graphics, fs_type;
+allow platform_app vendor_sysfs_graphics:file read;
+allow platform_app vendor_sysfs_graphics:file open;
+allow platform_app vendor_sysfs_graphics:file getattr;
+
+#============= rild VENdor==============
+
+type rild, domain;
+type vendor_pd_locater_dbg_prop, vendor_property_type;
+#allow rild vendor_pd_locater_dbg_prop:file read;
+#allow rild vendor_pd_locater_dbg_prop:file open;
+#allow rild vendor_pd_locater_dbg_prop:file getattr;
+get_prop(rild, vendor_pd_locater_dbg_prop)
+dontaudit  rild default_prop:file read;
+
+##get_prop(rild, default_prop);neverallow
+
+
+#============= system_server ==============
+dontaudit system_server sysfs:file read;
+#allow system_server sysfs:file open;neverallow
+dontaudit system_server vndbinder_device:chr_file write;
+allow system_server mediaextractor_tmpfs:file write;
+allow system_server mediaserver_tmpfs:file write;
+allow system_server cameraserver_tmpfs:file write;
+
+#============= tee ==============
+type vendor_gpt_block_device, dev_type;
+type vendor_xbl_block_device, dev_type;
+##allow tee block_device:blk_file read;neverallow
+dontaudit tee block_device:blk_file read;
+dontaudit tee device:chr_file { read write };
+allow tee unlabeled:lnk_file read;
+allow tee vendor_gpt_block_device:blk_file read;
+allow tee vendor_xbl_block_device:blk_file read;
+allow tee vendor_gpt_block_device:blk_file open;
+allow tee vendor_xbl_block_device:blk_file open;
+
+#============= vendor_dataservice_app ==============
+##allow vendor_dataservice_app default_android_service:service_manager find;neverallow
+
+#============= vendor_hal_capabilityconfigstore_qti_default ==============
+type vendor_hal_capabilityconfigstore_qti_default, domain;
+type vendor_cap_configstore_dbg_prop, vendor_property_type;
+#allow vendor_hal_capabilityconfigstore_qti_default vendor_cap_configstore_dbg_prop:file read;
+#allow vendor_hal_capabilityconfigstore_qti_default vendor_cap_configstore_dbg_prop:file open;
+get_prop(vendor_hal_capabilityconfigstore_qti_default, vendor_cap_configstore_dbg_prop);
+
+#============= vendor_hal_gnss_qti ==============
+type vendor_hal_gnss_qti, domain;
+#allow vendor_hal_gnss_qti vendor_pd_locater_dbg_prop:file read;
+#allow vendor_hal_gnss_qti vendor_pd_locater_dbg_prop:file open;
+#allow vendor_hal_gnss_qti vendor_pd_locater_dbg_prop:file getattr;
+
+get_prop(vendor_hal_gnss_qti, vendor_pd_locater_dbg_prop);
+
+#============= vendor_init ==============
+type vendor_ims_prop, vendor_property_type;
+##allow vendor_init audio_prop:property_service set;
+set_prop(vendor_init, audio_prop);
+##allow vendor_init build_prop:property_service set;
+##set_prop(vendor_init, build_prop);
+dontaudit vendor_init default_prop:property_service set;
+##set_prop(vendor_init, default_prop);
+
+allow vendor_init device:chr_file getattr;
+allow vendor_init unlabeled:lnk_file read;
+
+##allow vendor_init bluetooth_prop:property_service set;
+##set_prop(vendor_init, bluetooth_prop);
+##allow vendor_init vendor_ims_prop:property_service set;
+set_prop(vendor_init, vendor_ims_prop);
+
+#============= vendor_modprobe ==============
+allow vendor_modprobe block_device:dir search;
+allow vendor_modprobe self:key write;
+
+
+#============= vendor_qcc_trd_2 ==============
+type vendor_qcc_trd_2, domain;
+type vendor_sysfs_microdump,fs_type;
+ 
+allow vendor_qcc_trd_2 vendor_sysfs_microdump:dir search;
+
+#============= vendor_qti_init_shell ==============
+type vendor_qti_init_shell, domain;
+allow vendor_qti_init_shell configfs:dir write;
+allow vendor_qti_init_shell configfs:dir add_name;
+allow vendor_qti_init_shell configfs:dir create;
+allow vendor_qti_init_shell configfs:dir setattr;
+allow vendor_qti_init_shell misc_block_device:blk_file write;
+allow vendor_qti_init_shell misc_block_device:blk_file open;
+allow vendor_qti_init_shell proc_page_cluster:file write;
+allow vendor_qti_init_shell proc_page_cluster:file open;
+allow vendor_qti_init_shell sysfs:file setattr;
+
+
+#============= vendor_subsystem_ramdump ==============
+type vendor_subsystem_ramdump, domain;
+allow vendor_subsystem_ramdump self:capability net_admin;
+
+#============= vendor_wcnss_service ==============
+#type vendor_wcnss_service, domain;
+##allow vendor_wcnss_service default_prop:property_service set;
+#set_prop(vendor_wcnss_service, default_prop);
+
+#============= vold ==============
+type sysfs_memory, fs_type, sysfs_type;
+allow vold sysfs_memory:file write;
+

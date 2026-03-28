@@ -1,0 +1,19 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init configuration files
+prebuilt_etc {
+    name: "sim-restart.rc",
+    src: "etc/init/sim-restart.rc",
+    sub_dir: "init",
+    
+}
+// Init scripts
+sh_binary {
+    name: "init.sim.restart.sh",
+    src: "bin/init.sim.restart.sh",
+    
+}
+
