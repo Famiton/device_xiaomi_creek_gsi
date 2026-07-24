@@ -1,0 +1,58 @@
+# App
+#ro.launcher.blur.appLaunch=0
+
+# Audio
+af.fast_track_multiplier=1
+audio.deep_buffer.media=true
+audio.offload.min.duration.secs=30
+audio.sys.mute.latency.factor=2
+audio.sys.offload.pstimeout.secs=3
+ro.af.client_heap_size_kbyte=7168
+
+# Netflix
+ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b
+ro.netflix.signup=1
+
+# Battery Saving
+#persist.radio.add_power_save=1
+#ro.ril.disable.power.collapse=0
+#ro.ril.fast.dormancy.rule=1
+#ro.ril.fast.dormancy.timeout=3
+#ro.mot.eri.losalert.delay=100
+
+# Radio
+#persist.sys.radio.force_lte_ca=true
+
+# Radio 
+persist.vendor.radio.enable_temp_dds=true
+ro.vendor.radio.fastdormancy=true
+ro.vendor.radio.features_common=3
+
+#bluetooth
+bluetooth.profile.asha.central.enabled=true
+bluetooth.profile.a2dp.source.enabled=true
+bluetooth.profile.avrcp.target.enabled=true
+bluetooth.profile.bap.broadcast.assist.enabled=false
+bluetooth.profile.bap.unicast.client.enabled=false
+bluetooth.profile.bap.broadcast.source.enabled=false
+bluetooth.profile.ccp.server.enabled=false
+bluetooth.profile.csip.set_coordinator.enabled=false
+bluetooth.profile.gatt.enabled=true
+bluetooth.profile.hap.client.enabled=false
+bluetooth.profile.hfp.ag.enabled=true
+bluetooth.profile.hid.host.enabled=true
+bluetooth.profile.mcp.server.enabled=false
+bluetooth.profile.opp.enabled=true
+bluetooth.profile.pan.nap.enabled=true
+bluetooth.profile.pan.panu.enabled=true
+bluetooth.profile.vcp.controller.enabled=false
+
+bluetooth.profile.avrcp.controller.enabled=false
+bluetooth.profile.hid.device.enabled=true
+bluetooth.profile.map.server.enabled=true
+bluetooth.profile.pbap.server.enabled=true
+bluetooth.profile.bas.client.enabled=true
+bluetooth.device_id.vendor_id=0x001D
+
+bluetooth.hfp.codec_aptx_voice.enabled=false
+bluetooth.hfp.swb.aptx.power_management.enabled=false

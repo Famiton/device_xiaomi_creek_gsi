@@ -1,0 +1,16 @@
+service sim-restart /system/bin/init.sim.restart.sh
+    class main
+    user root
+    oneshot
+    disabled
+
+
+on boot
+
+    setprop persist.radio.airplane_mode_on 1
+    
+on property:sys.boot_completed=1
+
+    setprop persist.radio.airplane_mode_on 0
+    
+#    start sim-restart

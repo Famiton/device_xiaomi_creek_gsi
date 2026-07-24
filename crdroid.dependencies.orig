@@ -1,0 +1,14 @@
+[
+  {
+    "repository": "crdroidandroid/android_hardware_xiaomi",
+    "target_path": "hardware/xiaomi",
+    "branch": "16.0"
+  },
+  {
+    "repository": "crdroidandroid/android_packages_apps_LunarisDolby",
+    "target_path": "packages/apps/LunarisDolby",
+    "branch": "16.0"
+  }
+  
+  
+]

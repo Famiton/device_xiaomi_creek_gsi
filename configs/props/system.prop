@@ -1,0 +1,173 @@
+ro.product.property_source_order=odm,vendor,product,system_ext,system
+
+# Audio
+persist.audio.button_jack.profile=volume
+persist.audio.button_jack.switch=0
+ro.vendor.audio.notification.single=true
+tunnel.audio.encode=true
+use.voice.path.for.pcm.voip=true
+
+# Bluetooth
+persist.vendor.btstack.aac_frm_ctl.enabled=true
+ro.bluetooth.emb_wp_mode=false
+ro.bluetooth.library_name=libbluetooth.so
+##ro.bluetooth.library_name=libbluetooth_qti.so
+ro.bluetooth.wipower=false
+
+# Camera
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.xiaomi.runin,com.xiaomi.cameratest,com.xiaomi.factory.mmi
+vendor.camera.aux.packagelistext=com.xiaomi.factory.CameraTestItem,com.firefightcam1,com.phonetest.hwtts
+
+#Camera MIVI enable default
+vendor.camera.support.mivi=true
+hypercamera.disable_app_default_config=true
+
+# CNE
+persist.vendor.cne.feature=1
+
+# Display
+debug.sf.enable_hwc_vds=0
+debug.sf.latch_unsignaled=1
+ro.gfx.driver.0=com.xiaomi.ugd
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.gradient_cache_size=1
+ro.hwui.layer_cache_size=48
+ro.hwui.max_texture_allocation_size=209715200
+ro.hwui.path_cache_size=32
+ro.hwui.r_buffer_cache_size=8
+ro.hwui.text_large_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_small_cache_width=1024
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.texture_cache_size=72
+ro.opengles.version=196610
+
+# GNSS
+persist.sys.gps.selfRecovery=3
+persist.vendor.overlay.izat.optin=rro
+
+# Health
+ro.charger.enable_suspend=1
+
+# Media
+debug.stagefright.ccodec=1
+media.aac_51_output_enabled=true
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+media.stagefright.enable-aac=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-http=true
+media.stagefright.enable-player=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
+# NFC
+ro.nfc.port=I2C
+
+# Radio
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_plmn=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+persist.vendor.radio.atfwd.start=true
+ril.subscription.types=NV,RUIM
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+ro.radio.device_type=1
+ro.telephony.default_network=33,33
+telephony.lteOnCdmaDevice=1
+persist.sys.radio.force_lte_ca=true
+
+
+    # RIL Powersaving
+persist.radio.add_power_save=1
+pm.sleep_mode=1
+ro.ril.disable.power.collapse=0
+ro.ril.fast.dormancy.rule=1
+ro.ril.fast.dormancy.timeout=3
+ro.mot.eri.losalert.delay=1000
+
+# IMS Debugging 
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableDebugLogs=1
+persist.vendor.ims.disableIMSLogs=1
+persist.vendor.ims.disableQXDMLogs=1
+
+
+# Wi-Fi
+ro.wifi.channels=
+
+# Wi-Fi Display
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
+
+# Miscellaneous
+DEVICE_PROVISIONED=1
+arm64.memtag.process.system_server=off
+config.disable_rtt=true
+
+
+debug.hwui.skia_atrace_enabled=false
+dev.pm.dyn_samplingrate=1
+mmp.enable.3g2=true
+
+persist.backup.ntpServer="0.pool.ntp.org"
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.data.df.dev_name=rmnet_usb0
+persist.data.df.dl_mode=5
+persist.data.df.iwlan_mux=9
+persist.data.df.mux_count=8
+persist.data.df.ul_mode=5
+persist.data.wda.enable=true
+persist.debug.coresight.config=stm-events
+persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
+persist.fuse_sdcard=true
+persist.hyper.barfollow_anim=true
+persist.mm.enable.prefetch=true
+persist.rmnet.data.enable=true
+persist.sys.force_sw_gles=1
+persist.timed.enable=true
+
+persist.vendor.connsysfw.enable=true
+persist.vendor.data.mode=concurrent
+persist.vendor.service.bdroid.soc.alwayson=true
+persist.vendor.ssr.enable_ramdumps=1
+
+qcom.hw.aac.encoder=true
+qemu.hw.mainkeys=0
+
+
+
+ro.com.android.mobiledata=false
+ro.com.google.lens.oem_camera_package=com.android.camera
+ro.com.google.lens.oem_image_package=com.miui.gallery
+
+ro.kernel.qemu.gles=0
+ro.launcher.blur.appLaunch=0
+
+ro.media.recorder-max-base-layer-fps=60
+ro.miui.allow_app_playbackcapture=true
+ro.miui.enable_cloud_verify=true
+ro.miui.pm.install.speedinstall=/data/apk-tmp
+ro.miui.shell_anim_enable_fcb=true
+ro.miui.support_audiorecord_compress=true
+
+
+ro.product.system.cert=
+ro.product.system.marketname=
+ro.vendor.qti.va_aosp.support=1
+ro.vendor.use_data_netmgrd=true
+
+sys.dfcservice.compress.prog=0
+sys.dfcservice.ctrl=false
+sys.dfcservice.enablelog.ctrl=false
+sys.qca1530=detect
+vendor.mm.enable.qcom_parser=16777215
+
