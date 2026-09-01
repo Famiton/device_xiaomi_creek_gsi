@@ -35,9 +35,7 @@ PRODUCT_PACKAGES += \
 # Add all of the packages used to support older/upgrading devices
 # These can be removed as we drop support for the older API levels
 PRODUCT_PACKAGES += \
-    $(PRODUCT_PACKAGES_SHIPPING_API_LEVEL_29) \
-    $(PRODUCT_PACKAGES_SHIPPING_API_LEVEL_33) \
-    $(PRODUCT_PACKAGES_SHIPPING_API_LEVEL_34)
+    $(PRODUCT_PACKAGES_SHIPPING_API_LEVEL_33)
 
 # Install a copy of the debug policy to the system_ext partition, and allow
 # init-second-stage to load debug policy from system_ext.
@@ -100,10 +98,17 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 # GSI should always support up-to-date platform features.
 # Keep this value at the latest API level to ensure latest build system
 # default configs are applied.
-PRODUCT_SHIPPING_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := $(PLATFORM_SDK_VERSION)
 BOARD_SHIPPING_API_LEVEL := 33
+
 # Enable dynamic partitions to facilitate mixing onto Cuttlefish
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Force-set 16KB page size configuration to be explicit,
+# also because shipping API level on the GSI sometimes gets
+# updated late.
+PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
+PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 16384
 
 # Enable dynamic partition size
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
@@ -112,6 +117,18 @@ PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 PRODUCT_PACKAGES += \
     gsi_skip_mount.cfg
 
+# Add all system_ext packages used to support older/upgrading devices that have
+# PRODUCT_SHIPPING_API_LEVEL 34 or older.
+# These can be removed as we drop support for the older API levels.
+PRODUCT_PACKAGES += \
+    hwservicemanager \
+    android.hidl.allocator@1.0-service \
+    android.hidl.memory@1.0-impl
+
+# PRODUCT_SHIPPING_API_LEVEL 33 or older.
+# These can be removed as we drop support for the older API levels.
+PRODUCT_PACKAGES += \
+    wificond
 
 # Overlay the GSI specific setting for framework and SystemUI
 ifneq ($(PRODUCT_IS_AUTOMOTIVE),true)
@@ -125,8 +142,7 @@ endif
 
 # Support additional VNDK snapshots
 PRODUCT_EXTRA_VNDK_VERSIONS := \
-    33 \
-    34
+    33 
 
 # Do not build non-GSI partition images.
 PRODUCT_BUILD_CACHE_IMAGE := false
@@ -321,3 +337,5 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 # Inherit several Android Go configurations
 ##PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/boot/boot-image-profile.txt
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+
+-include vendor/lineage-priv/keys/keys.mk
