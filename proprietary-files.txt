@@ -1,9 +1,12 @@
-# All blobs below are extracted from creek OS2.0.212.0.VBOMIXM
+# All blobs below are extracted from creek OS3.0.304.0.WBOMIXM
+
+# ANT+
+system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Alarm
 system_ext/app/PowerOffAlarm/PowerOffAlarm.apk
 system_ext/framework/vendor.qti.hardware.alarm-V1.0-java.jar
-
+system_ext/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Camera Extensions
 system_ext/framework/camerax-vendor-extensions.jar
@@ -19,6 +22,9 @@ system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
 system_ext/lib64/libmmrtpdecoder.so
 system_ext/lib64/libmmrtpencoder.so
+system_ext/lib64/vendor.qti.hardware.vpp-V1-ndk.so
+system_ext/lib64/vendor.qti.hardware.vpp@1.1.so
+
 
 # DPM
 #system_ext/bin/dpmd
@@ -39,49 +45,122 @@ system_ext/lib64/libmmrtpencoder.so
 system_ext/lib64/vendor.qti.diaghal@1.0.so
 system_ext/lib64/libdiag_system.so
 
+# Display
+#product/etc/displayconfig/display_id_4630946387282449025.xml
+#product/etc/displayconfig/display_id_4630946427073658497.xml
+#product/etc/permissions/com.qti.snapdragon.sdk.display.xml
+#product/framework/com.qti.snapdragon.sdk.display.jar
+#system_ext/app/colorservice/colorservice.apk
+#system_ext/lib64/libsd_sdk_display.qti.so
+#system_ext/lib64/libsdm-disp-apis.qti.so
+#system_ext/lib64/vendor.display.color@1.0.so
+#system_ext/lib64/vendor.display.color@1.1.so
+#system_ext/lib64/vendor.display.color@1.2.so
+#system_ext/lib64/vendor.display.color@1.3.so
+#system_ext/lib64/vendor.display.postproc@1.0.so
+
+# Gatekeeper
+#system_ext/etc/permissions/com.qti.media.secureprocessor.xml
+#system_ext/framework/com.qti.media.secureprocessor.jar
+
+
 # IMS (system)
 system/lib/vendor.qti.diaghal-V1-ndk.so
 system/lib64/vendor.qti.diaghal-V1-ndk.so
 
-system_ext/app/ImsRcsService/ImsRcsService.apk
+##system_ext/app/ImsRcsService/ImsRcsService.apk
 system_ext/priv-app/QtiTelephony/QtiTelephony.apk;REQUIRED=QtiTelephonyCompat
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
+system_ext/etc/permissions/vendor.qti.imsdcservice.xml
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
+
 system_ext/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 system_ext/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
 system_ext/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
+system_ext/lib64/com.qualcomm.qti.imscmservice@2.0.so
+system_ext/lib64/com.qualcomm.qti.imscmservice@2.1.so
+system_ext/lib64/com.qualcomm.qti.imscmservice@2.2.so
+
+system_ext/framework/vendor.qti.ims.imscmaidlservice-V1-java.jar
+system_ext/lib64/vendor.qti.ims.imscmaidlservice-V1-ndk.so
+
 system_ext/framework/vendor.qti.ims.callcapability-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.callcapabilityaidlservice-V1-java.jar
+system_ext/lib64/vendor.qti.ims.callcapability@1.0.so
+system_ext/lib64/vendor.qti.ims.callcapabilityaidlservice-V1-ndk.so
+
 system_ext/framework/vendor.qti.ims.callinfo-V1.0-java.jar
+system_ext/lib64/vendor.qti.ims.callinfo@1.0.so
+
 system_ext/framework/vendor.qti.ims.configaidlservice-V1-java.jar
 system_ext/framework/vendor.qti.ims.configservice-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.configservice-V1.1-java.jar
+system_ext/lib64/vendor.qti.ims.configaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.configservice@1.0.so
+system_ext/lib64/vendor.qti.ims.configservice@1.1.so
+
 system_ext/framework/vendor.qti.ims.connection-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.connectionaidlservice-V1-java.jar
+system_ext/lib64/vendor.qti.ims.connectionaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.connection@1.0.so
+
+system_ext/etc/permissions/datachannellib.xml
+system_ext/framework/datachannellib.jar
+
 system_ext/framework/vendor.qti.ims.datachannelservice-V1-java.jar
+system_ext/framework/vendor.qti.ims.datachannelservice-V2-java.jar
+system_ext/framework/vendor.qti.ims.datachannelservice-V3-java.jar
+system_ext/lib64/vendor.qti.ims.datachannelservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.datachannelservice-V2-ndk.so
+system_ext/lib64/vendor.qti.ims.datachannelservice-V3-ndk.so
+
 system_ext/framework/vendor.qti.ims.factory-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.factory-V1.1-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.1-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar
 system_ext/framework/vendor.qti.ims.factoryaidlservice-V1-java.jar
+system_ext/lib64/vendor.qti.ims.factory@1.0.so
+system_ext/lib64/vendor.qti.ims.factory@1.1.so
+system_ext/lib64/vendor.qti.ims.factory@2.0.so
+system_ext/lib64/vendor.qti.ims.factory@2.1.so
+system_ext/lib64/vendor.qti.ims.factory@2.2.so
+system_ext/lib64/vendor.qti.ims.factoryaidlservice-V1-ndk.so
+
 system_ext/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.rcsconfig-V1.1-java.jar
 system_ext/framework/vendor.qti.ims.rcsconfig-V2.0-java.jar
 system_ext/framework/vendor.qti.ims.rcsconfig-V2.1-java.jar
+system_ext/lib64/vendor.qti.ims.rcsconfig@1.0.so
+system_ext/lib64/vendor.qti.ims.rcsconfig@1.1.so
+system_ext/lib64/vendor.qti.ims.rcsconfig@2.0.so
+system_ext/lib64/vendor.qti.ims.rcsconfig@2.1.so
+
 system_ext/framework/vendor.qti.ims.rcssipaidlservice-V1-java.jar
 system_ext/framework/vendor.qti.ims.rcssip-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.rcssip-V1.1-java.jar
 system_ext/framework/vendor.qti.ims.rcssip-V1.2-java.jar
+system_ext/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.rcssip@1.0.so
+system_ext/lib64/vendor.qti.ims.rcssip@1.1.so
+system_ext/lib64/vendor.qti.ims.rcssip@1.2.so
+
 system_ext/framework/vendor.qti.ims.rcsuceaidlservice-V1-java.jar
 system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.rcsuce-V1.1-java.jar
 system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar
+system_ext/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ims.rcsuce@1.0.so
+system_ext/lib64/vendor.qti.ims.rcsuce@1.1.so
+system_ext/lib64/vendor.qti.ims.rcsuce@1.2.so
+
+system_ext/framework/xiaomi-modem-common.jar
+
 system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
@@ -91,20 +170,31 @@ system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/li
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
 system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
-##system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so
-system_ext/lib64/vendor.qti.ims.factoryaidlservice-V1-ndk.so
-system_ext/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
-system_ext/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
-system_ext/lib64/vendor.qti.ims.callcapabilityaidlservice-V1-ndk.so
-system_ext/lib64/vendor.qti.ims.connectionaidlservice-V1-ndk.so
-system_ext/lib64/vendor.qti.ims.configaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so
 system_ext/priv-app/ims/ims.apk;REQUIRED=QtiTelephonyCompat
 
+# QSPA
+system_ext/etc/init/qspa_system.rc
+system_ext/etc/qspa/qspa_default.rc
 
 # Radio
-system/etc/permissions/privapp-permissions-qti.xml
 system/etc/sysconfig/qti_whitelist.xml
+system/etc/permissions/privapp-permissions-qti.xml
 system/framework/tcmclient.jar
+
+system_ext/etc/permissions/qti_permissions.xml
+system_ext/etc/permissions/privapp-permissions-qti-system-ext.xml
+
+system_ext/app/DeviceInfo/DeviceInfo.apk
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+
+system_ext/app/AtFwd2/AtFwd2.apk
+system_ext/app/atfwd/atfwd.apk
+
+#-------------QCRIL
+system_ext/etc/permissions/qcrilhook.xml
+system_ext/framework/qcrilhook.jar
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
         # RIL (UIM)
 product/app/uimgbaservice/uimgbaservice.apk
@@ -114,50 +204,41 @@ product/etc/permissions/UimService.xml
 product/framework/uimgbalibrary.jar
 product/framework/uimgbamanagerlibrary.jar
 product/framework/uimservicelibrary.jar
-
-system_ext/app/DeviceInfo/DeviceInfo.apk
-system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
-
-system_ext/app/AtFwd2/AtFwd2.apk
-system_ext/app/atfwd/atfwd.apk
-    
+   
     # ???????????????
-system_ext/app/uceShimService/uceShimService.apk
-system_ext/etc/sysconfig/whitelist_com.qualcomm.qti.uceShimService.xml
-
-#-------------
-system_ext/etc/permissions/privapp-permissions-qti-system-ext.xml
-system_ext/etc/permissions/qcrilhook.xml
-system_ext/etc/permissions/qti_permissions.xml
-system_ext/framework/qcrilhook.jar
-
+#system_ext/app/uceShimService/uceShimService.apk
+#system_ext/etc/sysconfig/whitelist_com.qualcomm.qti.uceShimService.xml
 
 ##system_ext/framework/mirilhook.jar
-system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+
+
+# Sensors Calibrations
+system_ext/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 
 # QCC
-##system_ext/app/QCC/QCC.apk
-##system_ext/bin/qccsyshal@1.2-service
-##system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc
-##system_ext/etc/permissions/com.qti.qcc.vendor_qcc.xml
-##system_ext/lib64/libqcc.so
-##system_ext/lib64/libqcc_file_agent_sys.so
-##system_ext/lib64/libqcc_netstats.so
-##system_ext/lib64/libqccdme.so
-##system_ext/lib64/libqccfileservice.so
-##system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0.so
-##system_ext/lib64/vendor.qti.hardware.qccsyshal@1.1.so
-##system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so
-##system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2.so
-##system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so
-##system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
-##system_ext/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
+system_ext/app/QCC/QCC.apk
+system_ext/bin/qccsyshal@1.2-service
+system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc
+system_ext/etc/permissions/com.qti.qcc.vendor_qcc.xml
+system_ext/lib64/libqcc.so
+system_ext/lib64/libqcc_file_agent_sys.so
+system_ext/lib64/libqcc_netstats.so
+system_ext/lib64/libqccdme.so
+system_ext/lib64/libqccfileservice.so
+system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0.so
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.1.so
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2.so
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so
 
-#system_ext/bin/qccsyshal_aidl-service
-#system_ext/etc/init/vendor.qti.qccsyshal_aidl-service.rc
-#system_ext/etc/vintf/manifest/vendor.qti.qccsyshal_aidl-service.xml
-#system_ext/lib64/vendor.qti.qccsyshal_aidl-halimpl.so
+system_ext/bin/qccsyshal_aidl-service
+system_ext/etc/init/vendor.qti.qccsyshal_aidl-service.rc
+system_ext/etc/vintf/manifest/vendor.qti.qccsyshal_aidl-service.xml
+system_ext/lib64/vendor.qti.qccsyshal_aidl-halimpl.so
+system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
+system_ext/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
 
+# ???????????????
 #system_ext/etc/permissions/com.qti.location.sdk.xml
 #system_ext/etc/permissions/com.qualcomm.location.xml
 #system_ext/etc/permissions/com.qualcomm.qti.izattools.xml
@@ -165,6 +246,7 @@ system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 #system_ext/framework/com.qti.location.sdk.jar
 #system_ext/lib64/liblocsdk_diag_jni.so
 #system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk
+
 
 # MLIPAY
 
@@ -192,3 +274,9 @@ system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
 # Widevine DRM
 #odm/lib64/libwvkeybox.so
+
+# DRM
+#system_ext/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
+#system_ext/lib64/vendor.qti.hardware.qseecom@1.0.so
+#system_ext/lib64/vendor.qti.hardware.qteeconnector-V1-ndk.so
+#system_ext/lib64/vendor.qti.hardware.qteeconnector@1.0.so
