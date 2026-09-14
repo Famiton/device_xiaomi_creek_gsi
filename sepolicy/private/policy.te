@@ -69,6 +69,7 @@ allow hal_camera_default vendor_sysfs_qvga_file:file getattr;
 
 #============= hal_fingerprint_default ==============
 type hal_fingerprint_default,  domain;
+allow hal_fingerprint_default vendor_data_file:dir create;
 allow hal_fingerprint_default vendor_data_file:file create;
 
 #============= hal_health_default ==============
@@ -95,6 +96,9 @@ allow system_suspend sysfs:dir read;
 allow init debugfs_tracing_debug:dir mounton;
 allow init sysfs_memory:file open;
 allow init sysfs_memory:file write;
+allow init tmpfs:blk_file read;
+allow init tmpfs:blk_file open;
+
 
 #============= isolated_app ==============
 dontaudit isolated_app content_capture_service:service_manager find;
@@ -180,6 +184,7 @@ set_prop(vendor_init, audio_prop);
 ##set_prop(vendor_init, build_prop);
 dontaudit vendor_init default_prop:property_service set;
 ##set_prop(vendor_init, default_prop);
+#allow vendor_init default_prop:file read;
 
 allow vendor_init device:chr_file getattr;
 allow vendor_init unlabeled:lnk_file read;
@@ -227,4 +232,22 @@ allow vendor_subsystem_ramdump self:capability net_admin;
 #============= vold ==============
 type sysfs_memory, fs_type, sysfs_type;
 allow vold sysfs_memory:file write;
+
+#============= hal_nfc_default ==============
+type hal_nfc_default, domain;
+allow hal_nfc_default vendor_persist_nfc_prop:file open;
+allow hal_nfc_default vendor_persist_nfc_prop:file read;
+allow hal_nfc_default vendor_persist_nfc_prop:file getattr;
+allow hal_nfc_default vendor_persist_nfc_prop:file map;
+#============= vendor_qcomsysd ==============
+type vendor_qcomsysd, domain;
+allow vendor_qcomsysd self:capability sys_admin;
+
+#============= hal_wifi_default ==============
+type hal_wifi_default, domain;
+allow hal_wifi_default persist_vendor_debug_wifi_prop:file read;
+allow hal_wifi_default persist_vendor_debug_wifi_prop:file open;
+allow hal_wifi_default persist_vendor_debug_wifi_prop:file getattr;
+allow hal_wifi_default persist_vendor_debug_wifi_prop:file map;
+allow hal_wifi_default self:capability sys_module;
 
