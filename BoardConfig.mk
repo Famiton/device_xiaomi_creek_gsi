@@ -198,12 +198,12 @@ BOARD_ROOT_EXTRA_SYMLINKS += /vendor/firmware_mnt:/firmware
 ##BOARD_ROOT_EXTRA_SYMLINKS := $(filter-out $(BOARD_ROOT_EXTRA_SYMLINKS),/mnt/vendor/persist:/persist)
 
 # VINTF
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
-    
 #DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-#    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-#    hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml
+#    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
+    
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
+    hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml
 
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/framework_manifest.xml
 
