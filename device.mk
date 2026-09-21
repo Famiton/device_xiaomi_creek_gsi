@@ -65,9 +65,6 @@ TARGET_BUILD_DEVICE_AS_WEBCAM := true
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/xiaomi/creek_gsi/creek_gsi-vendor.mk)
 
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
